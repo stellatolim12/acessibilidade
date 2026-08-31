@@ -1,0 +1,143 @@
+/* Variáveis para alternância de temas de alto contraste */
+:root {
+  --bg-color: #000000;
+  --text-color: #FFFFFF;
+  --accent-color: #FFFF00; /* Amarelo de alto contraste */
+  --card-bg: #121212;
+  --border-color: #FFFF00;
+  --font-size-base: 22px;
+  --focus-outline: 4px solid #FFFFFF;
+}
+
+/* Tema de Contraste Invertido (Fundo Branco, Texto Preto) */
+body.light-theme {
+  --bg-color: #FFFFFF;
+  --text-color: #000000;
+  --accent-color: #000000;
+  --card-bg: #F0F0F0;
+  --border-color: #000000;
+  --focus-outline: 4px solid #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Atalho de acessibilidade para navegação por teclado */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent-color);
+  color: #000000;
+  padding: 8px;
+  z-index: 1000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Barra de ferramentas de acessibilidade fixa */
+.accessibility-toolbar {
+  background-color: #1A1A1A;
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 4px solid var(--border-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+body.light-theme .accessibility-toolbar {
+  background-color: #E0E0E0;
+}
+
+.accessibility-toolbar button {
+  background-color: var(--accent-color);
+  color: #000000;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border: 2px solid var(--text-color);
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 48px; /* Tamanho mínimo para área de toque */
+}
+
+.accessibility-toolbar button:focus,
+.accessibility-toolbar button:hover {
+  outline: var(--focus-outline);
+  text-decoration: underline;
+}
+
+header {
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--border-color);
+}
+
+h1 {
+  font-size: 2.6rem;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.alert-box {
+  background-color: var(--card-bg);
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: var(--accent-color);
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 30px;
+}
+
+li {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+/* Regras globais de foco para acessibilidade via teclado */
+a:focus, button:focus, [tabindex="0"]:focus {
+  outline: var(--focus-outline);
+  outline-offset: 3px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid var(--border-color);
+  margin-top: 40px;
+}
