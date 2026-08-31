@@ -1,22 +1,24 @@
-/* Variáveis para alternância de temas de alto contraste */
+/* Variáveis para temas neutros e detalhes de alto contraste */
 :root {
-  --bg-color: #000000;
-  --text-color: #FFFFFF;
-  --accent-color: #FFFF00; /* Amarelo de alto contraste */
-  --card-bg: #121212;
-  --border-color: #FFFF00;
+  --bg-color: #121212;         /* Fundo escuro neutro */
+  --text-color: #F5F5F7;       /* Texto claro neutro */
+  --accent-color: #38BDF8;     /* Azul vívido para chamar atenção */
+  --card-bg: #1E1E1E;         /* Cinza para cartões */
+  --border-color: #333333;     /* Borda neutra sutil */
+  --accent-border: #38BDF8;    /* Borda de destaque */
   --font-size-base: 22px;
-  --focus-outline: 4px solid #FFFFFF;
+  --focus-outline: 4px solid #38BDF8;
 }
 
-/* Tema de Contraste Invertido (Fundo Branco, Texto Preto) */
+/* Tema Claro Neutro */
 body.light-theme {
-  --bg-color: #FFFFFF;
-  --text-color: #000000;
-  --accent-color: #000000;
-  --card-bg: #F0F0F0;
-  --border-color: #000000;
-  --focus-outline: 4px solid #000000;
+  --bg-color: #FAFAFA;         /* Fundo branco/creme sutil */
+  --text-color: #1A1A1A;       /* Texto quase preto */
+  --accent-color: #0284C7;     /* Azul escuro vibrante */
+  --card-bg: #FFFFFF;         /* Fundo de cartão limpo */
+  --border-color: #E5E5E5;     /* Borda cinza clara */
+  --accent-border: #0284C7;
+  --focus-outline: 4px solid #0284C7;
 }
 
 * {
@@ -34,7 +36,6 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Atalho de acessibilidade para navegação por teclado */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -51,72 +52,75 @@ body {
   top: 0;
 }
 
-/* Barra de ferramentas de acessibilidade fixa */
 .accessibility-toolbar {
-  background-color: #1A1A1A;
+  background-color: var(--card-bg);
   padding: 15px;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 4px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-}
-
-body.light-theme .accessibility-toolbar {
-  background-color: #E0E0E0;
+  gap: 12px;
 }
 
 .accessibility-toolbar button {
-  background-color: var(--accent-color);
-  color: #000000;
+  background-color: transparent;
+  color: var(--text-color);
   font-weight: bold;
   font-size: 1rem;
   padding: 12px 20px;
-  border: 2px solid var(--text-color);
+  border: 2px solid var(--accent-color); /* Borda em cor viva para destaque */
   border-radius: 8px;
   cursor: pointer;
-  min-height: 48px; /* Tamanho mínimo para área de toque */
+  min-height: 48px;
+  transition: all 0.2s ease-in-out;
 }
 
-.accessibility-toolbar button:focus,
-.accessibility-toolbar button:hover {
+/* Efeito ao passar o mouse ou focar no botão */
+.accessibility-toolbar button:hover,
+.accessibility-toolbar button:focus {
+  background-color: var(--accent-color);
+  color: #000000;
   outline: var(--focus-outline);
-  text-decoration: underline;
+  outline-offset: 2px;
 }
 
 header {
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
   border-bottom: 2px solid var(--border-color);
 }
 
 h1 {
   font-size: 2.6rem;
-  color: var(--accent-color);
+  color: var(--text-color);
   margin: 0;
+  letter-spacing: -0.5px;
 }
 
 main {
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px 20px;
 }
 
+/* Cartões com fundo neutro e borda esquerda de destaque */
 .alert-box {
   background-color: var(--card-bg);
-  border: 3px solid var(--border-color);
-  border-radius: 12px;
-  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-left: 8px solid var(--accent-border); /* Destaque na borda lateral */
+  border-radius: 8px;
+  padding: 30px;
   margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
   font-size: 2.2rem;
-  color: var(--accent-color);
+  color: var(--accent-color); /* Título na cor de destaque para direcionar a leitura */
   margin-top: 0;
 }
 
@@ -129,7 +133,10 @@ li {
   font-size: 1.1em;
 }
 
-/* Regras globais de foco para acessibilidade via teclado */
+li strong {
+  color: var(--accent-color); /* Termos importantes com cor em destaque */
+}
+
 a:focus, button:focus, [tabindex="0"]:focus {
   outline: var(--focus-outline);
   outline-offset: 3px;
@@ -137,7 +144,9 @@ a:focus, button:focus, [tabindex="0"]:focus {
 
 footer {
   text-align: center;
-  padding: 20px;
-  border-top: 2px solid var(--border-color);
+  padding: 25px;
+  border-top: 1px solid var(--border-color);
   margin-top: 40px;
+  color: var(--text-color);
+  opacity: 0.8;
 }
