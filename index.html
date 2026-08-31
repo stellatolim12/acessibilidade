@@ -3,53 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prevenção contra Golpes - Guia Acessível</title>
-  <!-- Vinculando o arquivo CSS externo -->
+  <title>Segurança Digital - Guia Acessível</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Atalho de acessibilidade para navegação por teclado -->
+  <!-- Link de atalho rápido -->
   <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
-  <!-- Barra de Ferramentas de Acessibilidade -->
-  <div class="accessibility-toolbar" role="region" aria-label="Controles de Acessibilidade">
-    <button id="btn-increase-font" aria-label="Aumentar o tamanho do texto">A+ Aumentar Texto</button>
-    <button id="btn-decrease-font" aria-label="Diminuir o tamanho do texto">A- Diminuir Texto</button>
-    <button id="btn-toggle-contrast" aria-label="Alternar modo de contraste">Alto Contraste P&B</button>
-  </div>
-
-  <header role="banner">
-    <h1>Guia Acessível de Prevenção contra Golpes</h1>
+  <!-- Barra de Acessibilidade Flutuante -->
+  <header class="accessibility-bar" role="region" aria-label="Controles de Acessibilidade">
+    <div class="bar-container">
+      <span class="bar-title">Acessibilidade:</span>
+      <div class="button-group">
+        <button id="btn-increase-font" aria-label="Aumentar o tamanho do texto">A+</button>
+        <button id="btn-decrease-font" aria-label="Diminuir o tamanho do texto">A-</button>
+        <button id="btn-toggle-contrast" aria-label="Alternar modo de alto contraste">◐ Contraste</button>
+      </div>
+    </div>
   </header>
 
-  <main id="main-content" role="main" tabindex="-1">
-    <section class="alert-box" aria-labelledby="dicas-seguranca">
-      <h2 id="dicas-seguranca">Dicas Principais de Segurança</h2>
-      <ul>
-        <li><strong>Desconfie de urgência:</strong> Golpistas usam histórias alarmantes para que você aja sem pensar. Pause e analise antes de tomar qualquer atitude.</li>
-        <li><strong>Nunca compartilhe senhas ou códigos:</strong> Bancos e empresas sérias jamais pedem senhas, tokens ou códigos enviados por SMS.</li>
-        <li><strong>Cuidado com links suspeitos:</strong> Não clique em links recebidos por mensagem de texto ou e-mail de remetentes desconhecidos.</li>
-        <li><strong>Verifique a identidade:</strong> Se alguém próximo pedir dinheiro por mensagem com um número novo, ligue diretamente para o número antigo dessa pessoa para confirmar.</li>
-      </ul>
+  <!-- Cabeçalho Principal (Hero) -->
+  <section class="hero-header" role="banner">
+    <div class="hero-content">
+      <span class="badge">Guia de Proteção</span>
+      <h1>Prevenção contra Golpes Digitais</h1>
+      <p>Dicas práticas e acessíveis para navegar na internet com segurança.</p>
+    </div>
+  </section>
+
+  <!-- Conteúdo Principal -->
+  <main id="main-content" class="container" role="main" tabindex="-1">
+
+    <h2 class="section-title">Como se proteger</h2>
+
+    <!-- Layout em Cards Grid -->
+    <div class="cards-grid">
+
+      <article class="card warning">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">⚠️</span>
+          <h3>Pressão e Urgência</h3>
+        </div>
+        <p>Golpistas exigem respostas rápidas. <strong>Mantenha a calma</strong> e confirme as informações antes de tomar qualquer atitude.</p>
+      </article>
+
+      <article class="card danger">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">🔒</span>
+          <h3>Senhas e Códigos</h3>
+        </div>
+        <p><strong>Jamais envie senhas</strong> ou códigos recebidos por SMS. Instituições financeiras nunca pedem esses dados por mensagem.</p>
+      </article>
+
+      <article class="card info">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">🔗</span>
+          <h3>Links e Anexos</h3>
+        </div>
+        <p>Evite clicar em links suspeitos de e-mails ou mensagens de desconhecidos. <strong>Verifique o endereço</strong> com atenção.</p>
+      </article>
+
+      <article class="card success">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">📞</span>
+          <h3>Confirme Identidades</h3>
+        </div>
+        <p>Se um conhecido pedir dinheiro por mensagem usando outro número, <strong>ligue para o número antigo dele</strong> para validar.</p>
+      </article>
+
+    </div>
+
+    <!-- Seção de Ação de Emergência -->
+    <section class="action-banner">
+      <h2>Suspeita ou Vítima de Golpe?</h2>
+      <p>Siga estes passos imediatos para minimizar os danos:</p>
+      <ol class="steps-list">
+        <li><strong>Corte o contato</strong> imediatamente com a fonte suspeita.</li>
+        <li><strong>Ligue para seu banco</strong> pelo número oficial localizado no verso do seu cartão.</li>
+        <li><strong>Faça um Boletim de Ocorrência (B.O.)</strong> no site da Polícia Civil do seu Estado.</li>
+      </ol>
     </section>
 
-    <section class="alert-box" aria-labelledby="como-denunciar">
-      <h2 id="como-denunciar">Suspeita de Golpe? Saiba como agir</h2>
-      <p>Se você suspeitar que caiu em um golpe ou recebeu uma tentativa de fraude:</p>
-      <ul>
-        <li>Interrompa o contato imediatamente com o suspeito.</li>
-        <li>Ligue para o canal oficial de atendimento do seu banco (utilize o número no verso do seu cartão).</li>
-        <li>Registre um Boletim de Ocorrência (BO) junto à Polícia Civil do seu Estado.</li>
-      </ul>
-    </section>
   </main>
 
   <footer role="contentinfo">
-    <p>Projeto focado em Acessibilidade Digital e Segurança no GitHub.</p>
+    <div class="container">
+      <p>Projeto focado em Acessibilidade e Segurança Digital • GitHub</p>
+    </div>
   </footer>
 
-  <!-- Vinculando o arquivo JS externo -->
   <script src="script.js"></script>
 </body>
 </html>
